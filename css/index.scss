@@ -1,0 +1,227 @@
+*{
+    box-sizing: border-box;
+    font-family: arial;
+}
+body{
+    background-color: #2c2c2c;
+    margin-top: 200px;
+}
+
+.table{
+    border:  1px solid #565656;
+    width: 100%;
+    max-width: 650px;
+    color: #e0e0e0;
+    border-radius: 5px;
+    border-spacing: 0;
+    font-size: 12px;
+    margin: auto;
+    $p: &;
+
+    &:not(:last-of-type){
+        margin-bottom: 40px;
+    }
+
+    tr{
+        &:not(:last-of-type){
+            td{
+                
+                border-bottom:  1px solid #565656;
+            }
+        }
+    }
+
+    td{
+        width: 50%;
+        padding: 10px;
+        &#{$p}-name--wrapp,
+        &#{$p}-input{
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        input{
+            display: none;
+
+            &:checked{
+                &+#{$p}-checkbox{
+                    background-color: #19a0fa;
+                    border-color: #19a0fa;
+
+                    &::before{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &-head{
+        font-weight: 600;
+    }
+
+    &-input{
+        position: relative;
+
+        label{
+            padding-left: 23px;
+        }
+    }
+
+    &-name{
+        position: relative;
+        
+        &::before{
+            content: "\f0dd";
+            font-family: 'Font Awesome 5 Free';
+            position: absolute;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-67%);
+            color: #fff;
+            font-weight: 800;
+        }
+
+        &--wrapp{
+            position: relative;
+
+            #{$p}-name{
+               margin-left: 23px;
+            }
+
+            input:checked + #{$p}-checkbox{
+                background-color: #19a0fa;
+                border: 1px solid #19a0fa;
+        
+                &::before{
+                    content: "\f068";
+                    color: #fff;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &-date{
+        position: relative;
+
+        &--value{
+            color: #8a8a8a;
+            position: relative;
+
+            &::before{
+                content: "\f141";
+                font-family: 'Font Awesome 5 Free';
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #fff;
+                font-weight: 800;
+            }
+        }
+    }
+
+    &-search{
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        height: calc(100% - 6px);
+        padding: 3px;
+        background-color: #444444;
+        border-radius: 3px;
+        width: 50%;
+        padding-left: 30px;
+
+        &::before{
+            font-family: 'Font Awesome 5 Free';
+            content: '\f002';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #8a8a8a;
+        }
+
+        input{
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            color: #8a8a8a;
+
+            &::placeholder{
+                color: #8a8a8a;
+            }
+
+            &:focus{
+                outline: 0;
+            }
+        }
+    }
+
+    &-checkbox{
+        width: 13px;
+        height: 13px;
+        background-color: #3b3b3b;
+        border-radius: 2px;
+        border: 1px solid #565656;
+        margin-right: 10px;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+
+        &::before{
+            content: "\f00c";
+            font-family: 'Font Awesome 5 Free';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-weight: 800;
+            font-size: 7px;
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    &-one{
+        #{$p}-date--value{
+
+            &:before{
+                color: #8a8a8a;
+            }
+        }
+    }
+
+    &-two{
+        #{$p}-name{
+            &:before{
+                left: 40px;
+            }
+        }
+    }
+
+    &-three{
+        #{$p}-name--value{
+            padding-left: 30px;
+            position: relative;
+
+            &:before{
+                font-family: 'Font Awesome 5 Free';
+                content: "\f187";
+                position: absolute;
+                font-weight: 800;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #16a0f9;
+            }
+        }
+    }
+   
+}
