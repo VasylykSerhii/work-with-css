@@ -42,7 +42,6 @@ body{
         }
 
         input{
-            display: none;
 
             &:checked{
                 &+#{$p}-checkbox{
@@ -143,13 +142,14 @@ body{
             transform: translateY(-50%);
             color: #8a8a8a;
         }
-
         input{
             height: 100%;
             width: 100%;
             background-color: transparent;
-            border: none;
             color: #8a8a8a;
+            display: block;
+            pointer-events: painted;
+            border: 0;
 
             &::placeholder{
                 color: #8a8a8a;
@@ -159,6 +159,7 @@ body{
                 outline: 0;
             }
         }
+
     }
 
     &-checkbox{
@@ -204,6 +205,11 @@ body{
                 left: 40px;
             }
         }
+
+        input{
+            display: none;
+        }
+
     }
 
     &-three{
